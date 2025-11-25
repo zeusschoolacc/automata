@@ -9,6 +9,7 @@ def reverse_word(word: str) -> str:
 
     index = len(word) - 1
 
+    # Add letter to new word starting from last index
     while index >= 0:
         character = word[index]
         new_word += character
@@ -17,13 +18,15 @@ def reverse_word(word: str) -> str:
     return new_word
 
 def reverse_text(text: str) -> str:
-    words = text.split()
+    words = text.split() # Divide text into words by whitespace
     reversed_words = []
 
+    # Reverse each word in the text    
     for word in words:
         reversed_word = reverse_word(word)
         reversed_words.append(reversed_word)
 
+    # Reconstruct the different words back to a single text 
     new_text = " ".join(reversed_words)
     return new_text
 
